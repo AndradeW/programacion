@@ -57,6 +57,23 @@ public class Edad {
         System.out.println("La edad minima es: " + min);
     }
 
+    public static void buscarEdad(int edadABuscar) {
+        boolean encontrado = false;
+
+        for (int i = 0; i < edad.length; i++) {
+            if (edad[i] == edadABuscar) {
+                encontrado = true;
+                break;
+            }
+        }
+
+        if (encontrado) {
+            System.out.println("Encontrado");
+        } else {
+            System.out.println("No encontrado");
+        }
+    }
+
     public static void main(String[] args) {
         int op = 0;
 
@@ -83,7 +100,8 @@ public class Edad {
             System.out.println("4. Identificar edad máxima");
             System.out.println("5. Identificar edad mínima");
             System.out.println("6. Ordenar edades");
-            System.out.println("7. Salir");
+            System.out.println("7. Buscar edad");
+            System.out.println("8. Salir");
             System.out.println("Digite su opción....");
 
             op = teclado.nextInt();
@@ -107,11 +125,15 @@ public class Edad {
                     sorter.sort(edad);
                     break;
                 case 7:
+                    System.out.println("Ingrese la edad a buscar: ");
+                    buscarEdad(teclado.nextInt());
+                    break;
+                case 8:
                     System.out.println("Ud presionó SALIR....");
                     break;
                 default:
                     System.out.println("Opción no válida");
             }
-        } while (op != 7);
+        } while (op != 8);
     }
 }
