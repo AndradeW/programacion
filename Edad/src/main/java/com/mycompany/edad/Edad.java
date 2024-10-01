@@ -71,20 +71,18 @@ public class Edad {
         SortStrategy s;
 
         switch (op) {
-            case 2:
+            case 2 -> {
                 s = new SelectionSort();
-                System.out.println("Se usará Seleccion");
-                break;
-            case 3:
+            }
+            case 3 -> {
                 s = new InsertionSort();
-                System.out.println("Se usará Insercion");
-                break;
-            default:
+            }
+            default -> {
                 s = new BubbleSort();
-                System.out.println("Se usará Burbuja");
-                break;
+            }
         }
 
+        System.out.println("Se usará " + s.getClass().getSimpleName());
         sorter = new Sorter(s);
         sorter.sort(edad);
     }
@@ -127,32 +125,25 @@ public class Edad {
 
             op = teclado.nextInt();
             switch (op) {
-                case 1:
+                case 1 ->
                     Edad.registrarEdades();
-                    break;
-                case 2:
+                case 2 ->
                     Edad.publicarEdades();
-                    break;
-                case 3:
+                case 3 ->
                     Edad.calcularPromedioEdades();
-                    break;
-                case 4:
+                case 4 ->
                     Edad.edadMaxima();
-                    break;
-                case 5:
+                case 5 ->
                     Edad.edadMinima();
-                    break;
-                case 6:
+                case 6 ->
                     Edad.ordenarEdades();
-                    break;
-                case 7:
+                case 7 -> {
                     System.out.println("Ingrese la edad a buscar: ");
                     Edad.buscarEdad(teclado.nextInt());
-                    break;
-                case 8:
+                }
+                case 8 ->
                     System.out.println("Ud presionó SALIR....");
-                    break;
-                default:
+                default ->
                     System.out.println("Opción no válida");
             }
         } while (op != 8);
