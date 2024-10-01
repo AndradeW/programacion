@@ -16,7 +16,7 @@ public class Edad {
 
     public static void registrarEdades() {
         for (int i = 0; i < edad.length; i++) {
-            System.out.print("Digite la edad a registrar....");
+            System.out.print("Digite la edad a registrar: ");
             edad[i] = teclado.nextInt();
         }
     }
@@ -62,7 +62,7 @@ public class Edad {
 
         teclado = new Scanner(System.in);
 
-        System.out.println("Ingrese la opci√≥n del algoritmo a usar: ");
+        System.out.println("Ingrese la opciÛn del algoritmo a usar: ");
         System.out.println("1. Burbuja");
         System.out.println("2. Seleccion");
         System.out.println("3. Insercion");
@@ -82,7 +82,7 @@ public class Edad {
             }
         }
 
-        System.out.println("Se usar√° " + s.getClass().getSimpleName());
+        System.out.println("Se usar· " + s.getClass().getSimpleName());
         sorter = new Sorter(s);
         sorter.sort(edad);
     }
@@ -116,12 +116,12 @@ public class Edad {
             System.out.println("1. Registrar edades");
             System.out.println("2. Publicar edades");
             System.out.println("3. Calcular promedio de edades");
-            System.out.println("4. Identificar edad m√°xima");
-            System.out.println("5. Identificar edad m√≠nima");
+            System.out.println("4. Identificar edad m·xima");
+            System.out.println("5. Identificar edad mÌnima");
             System.out.println("6. Ordenar edades");
             System.out.println("7. Buscar edad");
             System.out.println("8. Salir");
-            System.out.println("Digite su opci√≥n...");
+            System.out.println("Digite su opciÛn...");
 
             op = teclado.nextInt();
             switch (op) {
@@ -142,9 +142,9 @@ public class Edad {
                     Edad.buscarEdad(teclado.nextInt());
                 }
                 case 8 ->
-                    System.out.println("Ud presion√≥ SALIR....");
+                    System.out.println("Ud presionÛ SALIR....");
                 default ->
-                    System.out.println("Opci√≥n no v√°lida");
+                    System.out.println("OpciÛn no v·lida");
             }
         } while (op != 8);
     }
