@@ -3,6 +3,7 @@ package edad;
 import Sort.BubbleSort;
 import Sort.InsertionSort;
 import Sort.SelectionSort;
+import Sort.SortStrategy;
 import Sort.Sorter;
 import java.util.Scanner;
 
@@ -57,6 +58,37 @@ public class Edad {
         System.out.println("La edad minima es: " + min);
     }
 
+    public static void ordenarEdades() {
+
+        teclado = new Scanner(System.in);
+
+        System.out.println("Ingrese la opciÛn del algoritmo a usar: ");
+        System.out.println("1. Burbuja");
+        System.out.println("2. Seleccion");
+        System.out.println("3. Insercion");
+        int op = teclado.nextInt();
+
+        SortStrategy s;
+
+        switch (op) {
+            case 2:
+                s = new SelectionSort();
+                System.out.println("Se usar· Seleccion");
+                break;
+            case 3:
+                s = new InsertionSort();
+                System.out.println("Se usar· Insercion");
+                break;
+            default:
+                s = new BubbleSort();
+                System.out.println("Se usar· Burbuja");
+                break;
+        }
+
+        sorter = new Sorter(s);
+        sorter.sort(edad);
+    }
+
     public static void buscarEdad(int edadABuscar) {
         boolean encontrado = false;
 
@@ -78,7 +110,6 @@ public class Edad {
         int op = 0;
 
         teclado = new Scanner(System.in);
-        sorter = new Sorter(new InsertionSort());
 
         edad = new int[10];
 
@@ -97,42 +128,42 @@ public class Edad {
             System.out.println("1. Registrar edades");
             System.out.println("2. Publicar edades");
             System.out.println("3. Calcular promedio de edades");
-            System.out.println("4. Identificar edad m√°xima");
-            System.out.println("5. Identificar edad m√≠nima");
+            System.out.println("4. Identificar edad m·xima");
+            System.out.println("5. Identificar edad mÌnima");
             System.out.println("6. Ordenar edades");
             System.out.println("7. Buscar edad");
             System.out.println("8. Salir");
-            System.out.println("Digite su opci√≥n....");
+            System.out.println("Digite su opciÛn...");
 
             op = teclado.nextInt();
             switch (op) {
                 case 1:
-                    registrarEdades();
+                    Edad.registrarEdades();
                     break;
                 case 2:
-                    publicarEdades();
+                    Edad.publicarEdades();
                     break;
                 case 3:
-                    calcularPromedioEdades();
+                    Edad.calcularPromedioEdades();
                     break;
                 case 4:
-                    edadMaxima();
+                    Edad.edadMaxima();
                     break;
                 case 5:
-                    edadMinima();
+                    Edad.edadMinima();
                     break;
                 case 6:
-                    sorter.sort(edad);
+                    Edad.ordenarEdades();
                     break;
                 case 7:
                     System.out.println("Ingrese la edad a buscar: ");
-                    buscarEdad(teclado.nextInt());
+                    Edad.buscarEdad(teclado.nextInt());
                     break;
                 case 8:
-                    System.out.println("Ud presion√≥ SALIR....");
+                    System.out.println("Ud presionÛ SALIR....");
                     break;
                 default:
-                    System.out.println("Opci√≥n no v√°lida");
+                    System.out.println("OpciÛn no v·lida");
             }
         } while (op != 8);
     }
