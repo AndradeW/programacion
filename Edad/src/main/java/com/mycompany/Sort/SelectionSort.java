@@ -1,4 +1,4 @@
-package Sort;
+package com.mycompany.Sort;
 
 public class SelectionSort implements SortStrategy {
 

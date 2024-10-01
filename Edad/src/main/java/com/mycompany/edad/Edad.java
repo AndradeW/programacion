@@ -1,10 +1,10 @@
-package edad;
+package com.mycompany.edad;
 
-import Sort.BubbleSort;
-import Sort.InsertionSort;
-import Sort.SelectionSort;
-import Sort.SortStrategy;
-import Sort.Sorter;
+import com.mycompany.Sort.BubbleSort;
+import com.mycompany.Sort.InsertionSort;
+import com.mycompany.Sort.SelectionSort;
+import com.mycompany.Sort.SortStrategy;
+import com.mycompany.Sort.Sorter;
 import java.util.Scanner;
 
 public class Edad {
@@ -62,7 +62,7 @@ public class Edad {
 
         teclado = new Scanner(System.in);
 
-        System.out.println("Ingrese la opciÛn del algoritmo a usar: ");
+        System.out.println("Ingrese la opci√≥n del algoritmo a usar: ");
         System.out.println("1. Burbuja");
         System.out.println("2. Seleccion");
         System.out.println("3. Insercion");
@@ -73,15 +73,15 @@ public class Edad {
         switch (op) {
             case 2:
                 s = new SelectionSort();
-                System.out.println("Se usar· Seleccion");
+                System.out.println("Se usar√° Seleccion");
                 break;
             case 3:
                 s = new InsertionSort();
-                System.out.println("Se usar· Insercion");
+                System.out.println("Se usar√° Insercion");
                 break;
             default:
                 s = new BubbleSort();
-                System.out.println("Se usar· Burbuja");
+                System.out.println("Se usar√° Burbuja");
                 break;
         }
 
@@ -109,31 +109,21 @@ public class Edad {
     public static void main(String[] args) {
         int op = 0;
 
+        Edad.edad = new int[10];
+
         teclado = new Scanner(System.in);
 
-        edad = new int[10];
-
-        edad[0] = 20;
-        edad[1] = 5;
-        edad[2] = 7;
-        edad[3] = 2;
-        edad[4] = 50;
-        edad[5] = 15;
-        edad[6] = 99;
-        edad[7] = 30;
-        edad[8] = 1;
-        edad[9] = 12;
         do {
-            System.out.println("M E N U P R I N C I P A L");
+            System.out.println("\n\tM E N U P R I N C I P A L");
             System.out.println("1. Registrar edades");
             System.out.println("2. Publicar edades");
             System.out.println("3. Calcular promedio de edades");
-            System.out.println("4. Identificar edad m·xima");
-            System.out.println("5. Identificar edad mÌnima");
+            System.out.println("4. Identificar edad m√°xima");
+            System.out.println("5. Identificar edad m√≠nima");
             System.out.println("6. Ordenar edades");
             System.out.println("7. Buscar edad");
             System.out.println("8. Salir");
-            System.out.println("Digite su opciÛn...");
+            System.out.println("Digite su opci√≥n...");
 
             op = teclado.nextInt();
             switch (op) {
@@ -160,10 +150,10 @@ public class Edad {
                     Edad.buscarEdad(teclado.nextInt());
                     break;
                 case 8:
-                    System.out.println("Ud presionÛ SALIR....");
+                    System.out.println("Ud presion√≥ SALIR....");
                     break;
                 default:
-                    System.out.println("OpciÛn no v·lida");
+                    System.out.println("Opci√≥n no v√°lida");
             }
         } while (op != 8);
     }

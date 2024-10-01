@@ -1,4 +1,4 @@
-package Sort;
+package com.mycompany.Sort;
 
 public interface SortStrategy {
 
