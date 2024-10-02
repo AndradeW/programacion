@@ -16,7 +16,7 @@ public class Edad {
 
     public static void registrarEdades() {
         for (int i = 0; i < edad.length; i++) {
-            System.out.print("Digite la edad a registrar: ");
+            System.out.print("Digite la edad " + (i + 1) + " a registrar: ");
             edad[i] = teclado.nextInt();
         }
     }
@@ -33,8 +33,8 @@ public class Edad {
         for (int i = 0; i < edad.length; i++) {
             suma += edad[i];
             promedio = suma / edad.length;
-
         }
+
         System.out.println("El promedio es: " + promedio);
     }
 
@@ -45,6 +45,7 @@ public class Edad {
                 max = edad[i];
             }
         }
+
         System.out.println("La edad maxima es: " + max);
     }
 
@@ -55,6 +56,7 @@ public class Edad {
                 min = edad[i];
             }
         }
+
         System.out.println("La edad minima es: " + min);
     }
 
@@ -121,7 +123,7 @@ public class Edad {
             System.out.println("6. Ordenar edades");
             System.out.println("7. Buscar edad");
             System.out.println("8. Salir");
-            System.out.println("Digite su opción...");
+            System.out.println("Digite su opción:");
 
             op = teclado.nextInt();
             switch (op) {
