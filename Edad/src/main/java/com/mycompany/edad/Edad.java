@@ -9,10 +9,8 @@ import java.util.Scanner;
 
 public class Edad {
 
-    private static Scanner teclado;
-    private static Sorter sorter;
-
-    private static int[] edad;
+    private static final Scanner teclado = new Scanner(System.in);
+    private static final int[] edad = new int[10];
 
     public static void registrarEdades() {
         for (int i = 0; i < edad.length; i++) {
@@ -62,15 +60,14 @@ public class Edad {
 
     public static void ordenarEdades() {
 
-        teclado = new Scanner(System.in);
+        Sorter sorter;
+        SortStrategy s;
 
         System.out.println("Ingrese la opción del algoritmo a usar: ");
         System.out.println("1. Burbuja");
         System.out.println("2. Seleccion");
         System.out.println("3. Insercion");
         int op = teclado.nextInt();
-
-        SortStrategy s;
 
         switch (op) {
             case 2 -> {
@@ -85,6 +82,7 @@ public class Edad {
         }
 
         System.out.println("Se usará " + s.getClass().getSimpleName());
+
         sorter = new Sorter(s);
         sorter.sort(edad);
     }
@@ -108,10 +106,6 @@ public class Edad {
 
     public static void main(String[] args) {
         int op = 0;
-
-        Edad.edad = new int[10];
-
-        teclado = new Scanner(System.in);
 
         do {
             System.out.println("\n\tM E N U P R I N C I P A L");
